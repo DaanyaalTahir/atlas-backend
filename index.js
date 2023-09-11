@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
-const port = 8000;
+const PORT = process.env.PORT || 8000;
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the beginning of Project Atlas =)");
+  res.send({ message: "Welcome to the beginning of Project Atlas =)" });
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
