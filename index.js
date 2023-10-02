@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql");
 
 const app = express();
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3000;
 
 // Configure MySQL connection
 // const db = mysql.createConnection({
