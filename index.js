@@ -37,6 +37,6 @@ app.get("/", (req, res) => {
   res.send({ message: "Welcome to the beginning of Project Atlas =)" });
 });
 
-app.listen(PORT, () => {
-  console.log(`server started on port ${PORT}`);
+app.listen(parseInt(PORT, 10), () => {
+  console.log(`Server started on port ${PORT}`);
 });
