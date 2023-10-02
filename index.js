@@ -8,14 +8,16 @@ const app = express();
 const PORT = process.env.PORT || 3306;
 
 // Configure MySQL connection
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "fifastreet12",
-  database: "atlasdb",
-});
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "fifastreet12",
+//   database: "atlasdb",
+// });
 
-db.connect((err) => {
+const connection = mysql.createConnection(process.env.JAWSDB_URL);
+
+connection.connect((err) => {
   if (err) throw err;
   console.log("Connected to MySQL database");
 });
