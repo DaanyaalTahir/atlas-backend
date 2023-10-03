@@ -7,15 +7,14 @@ const mysql = require("mysql");
 const app = express();
 const PORT = process.env.PORT || 33570;
 
-// Configure MySQL connection
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "fifastreet12",
-//   database: "atlasdb",
-// });
+const connection = mysql.createConnection({
+  host: "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-",
+  user: " os0hrbkfsr8bdiv",
+  password: "c57gyhp7h3ml6iv0",
+  database: "je0zyzny9yrih8nc",
+});
 
-const connection = mysql.createConnection(process.env.JAWSDB_URL);
+// const connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 connection.connect((err) => {
   if (err) throw err;
