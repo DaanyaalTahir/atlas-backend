@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 33570;
 
 const connection = mysql.createConnection({
   host: "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  user: " os0hrbkfsr8bdiv",
+  user: "os0hrbkfsr8bdivr",
   password: "c57gyhp7h3ml6iv0",
   database: "je0zyzny9yrih8nc",
 });
