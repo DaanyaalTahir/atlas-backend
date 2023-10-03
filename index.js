@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 
 // Define API endpoints for CRUD operations
 app.get("/api/data", (req, res) => {
-  connection.query("SELECT * FROM userinfo", (err, results) => {
+  connection.query("SELECT * FROM atlasdb.userinfo", (err, results) => {
     if (err) throw err;
     res.json(results);
   });
