@@ -1,36 +1,19 @@
-require("dotenv").config(); // Load environment variables from .env
-
 const express = require("express");
 const bodyParser = require("body-parser");
-const mysql = require("mysql");
+require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 33570;
+const PORT = process.env.SERVER_PORT || 33570;
 
-const connection = mysql.createConnection({
-  host: "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  user: "os0hrbkfsr8bdivr",
-  password: "c57gyhp7h3ml6iv0",
-  database: "je0zyzny9yrih8nc",
-});
-
-// const connection = mysql.createConnection(process.env.JAWSDB_URL);
-
-connection.connect((err) => {
-  if (err) throw err;
-  console.log("Connected to MySQL database");
-});
-
+// Middleware
 app.use(bodyParser.json());
 
-// Define API endpoints for CRUD operations
 app.get("/api/data", (req, res) => {
   connection.query("SELECT * FROM users", (err, results) => {
     if (err) throw err;
     res.json(results);
   });
 });
-// Add more endpoints for CRUD operations (POST, PUT, DELETE)...
 
 app.get("/", (req, res) => {
   res.send({ message: "Welcome to the beginning of Project Atlas =)" });
