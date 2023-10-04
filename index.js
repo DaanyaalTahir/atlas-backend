@@ -6,7 +6,7 @@ const deviceRouter = require("./routes/deviceRoutes");
 const locationRouter = require("./routes/locationRoutes");
 
 const app = express();
-const PORT = process.env.SERVER_PORT || 33570;
+const PORT = process.env.PORT || 33570;
 
 // Middleware
 app.use(bodyParser.json());
