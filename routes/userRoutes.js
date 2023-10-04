@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const deviceController = require("../controllers/deviceController");
+const userController = require("../controllers/userController");
 
 // Define routes for device resource
-router.post("/add", deviceController.addDevice);
+router.post("/register", userController.createUser);
 
 module.exports = router;

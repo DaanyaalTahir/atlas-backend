@@ -1,6 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
-require("dotenv").config();
+const userRoutes = require("./routes/userRoutes");
+const deviceRouter = require("./routes/deviceRoutes");
+const locationRouter = require("./routes/locationRoutes");
 
 const app = express();
 const PORT = process.env.SERVER_PORT || 33570;
@@ -8,12 +11,9 @@ const PORT = process.env.SERVER_PORT || 33570;
 // Middleware
 app.use(bodyParser.json());
 
-app.get("/api/data", (req, res) => {
-  connection.query("SELECT * FROM users", (err, results) => {
-    if (err) throw err;
-    res.json(results);
-  });
-});
+app.use("/users", userRoutes);
+app.use("/devices", deviceRouter);
+app.use("/locations", locationRouter);
 
 app.get("/", (req, res) => {
   res.send({ message: "Welcome to the beginning of Project Atlas =)" });
