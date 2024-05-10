@@ -1,7 +1,7 @@
 # Atlas Backend Code
 This repository contains the code for the backend of the Atlas tracking system. 
 
-## Technologies
+## 💻 Technologies
 - ExpressJS
 - Sequalize
 - MySQL
